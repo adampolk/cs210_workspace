@@ -1,0 +1,104 @@
+1. For each problem, state its goal in your own words and describe your approach to solve the 
+problem along with any issues you encountered and if/how you managed to solve those issues.
+
+[Problem 1 (Greet Three)]
+
+Goal: Greet the three names given as command-line input by printing "Hi, name1, name2, and name3."
+
+Approach: I made a print statement that says "Hi" and adds the string args together going down from index two seperated by commas.
+
+[Problem 2 (Three Sort)]
+
+Goal: Sort and print three integers given as command line input in ascending order 
+
+Approach: I converted the string inputs into integers and found the smallest of those integers by using Math.min between the three. Then I found the largest by using Math.max. With both of those, I subtracted each from the total of the three numbers to get the middle number.
+
+[Problem 3 (Great Circle Distance)]
+
+Goal: Output the great-circle distance between two points
+
+Approach: I parsed the four input arguments into doubles and convert to radians to get the correct output from the Math class methods. I converted the given formula into Java using the Math classes acos, sin and cos methods.
+
+[Problem 4 (Uniform Random Numbers)]
+
+Goal: Print the mean, variance, and standard deviation of three random doubles from the range of input a (inclusive) and input b (exclusive)
+
+Approach: I stored the input into int variables a & b. Then I created three seperate variables that generated a random number in interval [a, b). To do this, I multiplied Math.random() by the range (b - a) and added a (the minimum) to shift the result to the correct interval. Finally, I used arithmetic operations & Math class methods to compute the mean, variance and standard deviation & printed those values.
+
+[Problem 5 (Triangle Inequality)]
+
+Goal: Print true if each side of the triangle is less than or equal to the sum of the other two, false if otherwise
+
+Approach: I stored the three inputs into int variables. Then I made an if statement that checks if each side is less than or equal to the other two sides. If all three conditions are true then it will print true. Otherwise, it prints false.
+
+[Problem 6 (Quadratic Equation)]
+
+Goal: Print the roots of the quadratic equation ax^2 + bx + c = 0 given a, b, and c as command line inputs
+
+Approach: I stored the inputs as doubles. I used those inputs to calculate the discriminant. Then I made an if statement to sanitize the input by first checking if a is equal to 0, if this is true, it will print a warning to the user. If it is not 0, it hits another statement which checks if the discriminant is a negative number (< 0), if true, it will warn the user. Finally, if both conditions are false, it will calculate and print each zero of the equation by seperately subtracting and adding -b from the discriminant and dividing by 2 * a.
+
+[Problem 7 (Six-sided Die)]
+
+Goal: ...
+
+Approach: 
+
+[Problem 8 (Playing Card)]
+
+Goal: ...
+
+Approach: ...
+
+[Problem 9 (Greatest Common Divisor)]
+
+Goal: Find the greatest common divisor of two input values
+
+Approach: I saved the two values into int variables. Then I made another variable to take track of the current GCD, greatest, which is initialized with 1. I made a loop that starts at 2 and goes to the minimum value of each input. I did this because we are assuming the GCD has to be atleast one, so we can skip to two, and the maximum it can be is the smallest of the two numbers. In the loop, I checked if each is evenly divisble by the current index, and if true, that means the current GCD is i. At the end of the loop I printed the final GCD.
+
+[Problem 10 (Factorial Function)]
+
+Goal: Print out the factorial value of input n
+
+Approach: Save the input in an int variable. I initialized an int variable with the value of n called factorial_value. Then I made a loop which starts at n - 1 (since factorial_value is equal to n) and decreases from n by 1 until it reaches zero. For each value of i, I set factorial_value equal to itself multipled by i. At the end of the loop, I print the final factorial value.
+
+[Problem 11 (Fibonacci Function)]
+
+Goal: Using input n, print the nth number of the fibonacci sequence.
+
+Approach: ...
+
+[Problem 12 (Primality Test)]
+
+Goal: ...
+
+Approach: ...
+
+[Problem 13 (Counting Primes)]
+
+Goal: ...
+
+Approach: ...
+
+[Problem 14 (Perfect Numbers)]
+
+Goal: ...
+
+Approach: ...
+
+[Problem 15 (Ramanujan Numbers)]
+
+Goal: ...
+
+Approach: ...
+
+2. Did you receive any help? List the sources along with a short description of the help received.
+
+Source                                                      Help Received
+------                                                      -------------
+
+https://www.geeksforgeeks.org/java/java-math-cos-method/    Learned that the sin, cos, and tan Math methods take input as radians and not degrees, therefore it must be converted first.
+
+3. List any other comments here. Feel free to provide any feedback on how much you learned from
+doing the assignment, and whether you enjoyed doing it.
+
+...

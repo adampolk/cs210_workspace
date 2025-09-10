@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Simple Programs",
+            "request": "launch",
+            "mainClass": "${file}",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+    ]
+}
