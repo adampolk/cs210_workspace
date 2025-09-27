@@ -12,7 +12,7 @@ public class Quadratic {
         if(a == 0){
             StdOut.println("Value of a must not be 0");
         }else if(discriminant < 0){
-            StdOut.println("Value of discriminant must not be negative.");
+            StdOut.println("Value of discriminant must not be negative");
         }else{
             double first_zero = (-b + Math.sqrt(discriminant)) / (2 * a);
             double second_zero = (-b - Math.sqrt(discriminant)) / (2 * a);
