@@ -6,8 +6,9 @@ public class Quadratic {
         double a = Double.parseDouble(args[0]);
         double b = Double.parseDouble(args[1]);
         double c = Double.parseDouble(args[2]);
-        double discriminant = Math.sqrt((Math.pow(b, 2) - (4 * a * c)));
+        double discriminant = Math.sqrt((b*b - (4 * a * c)));
 
+        // Make sure a is not 0 and the discriminant is not negative before solving for zeros
         if(a == 0){
             StdOut.println("Value of a must not be 0");
         }else if(discriminant < 0){

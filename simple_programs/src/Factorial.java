@@ -3,12 +3,13 @@ import stdlib.StdOut;
 public class Factorial {
     // Entry point.
     public static void main(String[] args) {
-        // TODO
         int n = Integer.parseInt(args[0]);
-        int factorial_value = n;
-        for(int i = n - 1; i > 0; i--){
-            factorial_value *= i;
+        long result = 1;
+
+        // Get the product of all numbers from 1 to n inclusive
+        for(int i = 1; i<=n; i++){
+            result *= i;
         }
-        StdOut.println(factorial_value);
+        StdOut.println(result);
     }
 }

@@ -5,25 +5,25 @@ problem along with any issues you encountered and if/how you managed to solve th
 
 Goal: Greet the three names given as command-line input by printing "Hi, name1, name2, and name3."
 
-Approach: I made a print statement that says "Hi" and adds the string args together going down from index two seperated by commas.
+Approach: I stored each argument in their own string variables. Then I made a print statement that says "Hi" and adds the string variables together going from last to first.
 
 [Problem 2 (Three Sort)]
 
 Goal: Sort and print three integers given as command line input in ascending order 
 
-Approach: I converted the string inputs into integers and found the smallest of those integers by using Math.min between the three. Then I found the largest by using Math.max. With both of those, I subtracted each from the total of the three numbers to get the middle number.
+Approach: I converted the string inputs into integers and found the smallest of those integers by using Math.min between the three. Then I found the largest by using Math.max. With both of those, I subtracted each from the total of the three numbers to get the middle number. Finally, I printed the three values from least to greatest.
 
 [Problem 3 (Great Circle Distance)]
 
 Goal: Output the great-circle distance between two points
 
-Approach: I parsed the four input arguments into doubles and convert to radians to get the correct output from the Math class methods. I converted the given formula into Java using the Math classes acos, sin and cos methods.
+Approach: I parsed the four input arguments into doubles and converted them to radians to get the correct output from the Math class methods. I converted the given formula into Java using the Math classes acos, sin and cos methods and plugged in the corresponding variables, and then print the result of the equation. I came across an issue in this program where I was getting the wrong output due to Math angle methods using radians instead of degrees, as our input is in degrees.
 
 [Problem 4 (Uniform Random Numbers)]
 
 Goal: Print the mean, variance, and standard deviation of three random doubles from the range of input a (inclusive) and input b (exclusive)
 
-Approach: I stored the input into int variables a & b. Then I created three seperate variables that generated a random number in interval [a, b). To do this, I multiplied Math.random() by the range (b - a) and added a (the minimum) to shift the result to the correct interval. Finally, I used arithmetic operations & Math class methods to compute the mean, variance and standard deviation & printed those values.
+Approach: I stored the input into int variables a & b. Then I created three seperate variables that generated a random double in interval [a, b). Finally, I used arithmetic operations & Math class methods to compute the mean, variance and standard deviation & printed those values.
 
 [Problem 5 (Triangle Inequality)]
 
@@ -39,57 +39,57 @@ Approach: I stored the inputs as doubles. I used those inputs to calculate the d
 
 [Problem 7 (Six-sided Die)]
 
-Goal: ...
+Goal: Simulate the roll of a dice by generating a random number and displaying the corresponding dice side
 
-Approach: 
+Approach: I stored a random integer from 1-6 in the value variable and declared a string called output. Then I made an if statement that initializes the output string depending on the roll value. Then I print the final output.
 
 [Problem 8 (Playing Card)]
 
-Goal: ...
+Goal: Select a random card from a standard deck of 52 playing cards and print the output.
 
-Approach: ...
+Approach: I generated two random integers; rank in the interval [2,14] & suit in the interval [1,4]. Then I declared two string variables: rankStr & suitStr. To initialize these variables, I made an if statement that first checks if rank is greater than 10. If it is, then I check for each value 11-14 and set the rankStr to its corresponding rank (Jack, Queen, King, and Ace). If the number is 10 or less, then I set the rankStr to the number parsed as a string. To get the suit I made another if statement that sets the suitStr variable to its corresponding value. Finally, I printed the two strings in the format "rankStr of suitStr".
 
 [Problem 9 (Greatest Common Divisor)]
 
 Goal: Find the greatest common divisor of two input values
 
-Approach: I saved the two values into int variables. Then I made another variable to take track of the current GCD, greatest, which is initialized with 1. I made a loop that starts at 2 and goes to the minimum value of each input. I did this because we are assuming the GCD has to be atleast one, so we can skip to two, and the maximum it can be is the smallest of the two numbers. In the loop, I checked if each is evenly divisble by the current index, and if true, that means the current GCD is i. At the end of the loop I printed the final GCD.
+Approach: I stored the two input values as integers p and q. I then made a while loop that runs while p % q does not equal zero (if q doesn't evenly divide p). In this loop I first save the current value of p in a temp variable. Then I set p equal to the previous value of q. Then I set q equal to the remainder (temp % q). The process repeeats until the remainder is zero. Then I print the current value of q at the end.
 
 [Problem 10 (Factorial Function)]
 
 Goal: Print out the factorial value of input n
 
-Approach: Save the input in an int variable. I initialized an int variable with the value of n called factorial_value. Then I made a loop which starts at n - 1 (since factorial_value is equal to n) and decreases from n by 1 until it reaches zero. For each value of i, I set factorial_value equal to itself multipled by i. At the end of the loop, I print the final factorial value.
+Approach: I stored the input integer as n. I initialized a long variable called result with the value of 1. Then I made a for loop that starts from one and goes until n inclusively, increasing by 1, and for each value of i in that loop and set result equal to itself multiplied by i. Finally, I print result.
 
 [Problem 11 (Fibonacci Function)]
 
 Goal: Using input n, print the nth number of the fibonacci sequence.
 
-Approach: ...
+Approach: First I store the input n as an integer. I initialized two long variables, "a" with the value of -1 and "b" with the value 1. Then I made a for loop that starts from zero and increases by 1 until i reaches n inclusively. In this loop, a is added onto b, and a becomes the previous value of b. Outside of the loop, the final value of b is printed, which represents the nth number of the fibonacci sequence.
 
 [Problem 12 (Primality Test)]
 
-Goal: ...
+Goal: Output true if input is prime, false if it is not
 
-Approach: ...
+Approach: I stored the input as integer n. Then I initialized a variable i with the value of 2, because any integer is always evenly divisble by 1. I made a while loop that says while i is less than or equal to n / i. This checks up until it reaches the square root of n, because if both factors are greater than the square root, the product would be greater than n. In the loop, I check if n is evenly disible by i. If true, then I break out of the loop, because that makes n not prime. Otherwise, I increase i by one and check again. If no factors are found, i will be larger than n/i, meaning n is prime. Otherwise, a divisor is found, so n is not prime. I came across an issue in this where the discussion writeup said to set i equal to 1, but this would cause the program to break out every time because every integer is divisible by 1, so I had to start it at 2.
 
 [Problem 13 (Counting Primes)]
 
-Goal: ...
+Goal: Output the number of prime numbers less than or equal to the input number
 
-Approach: ...
+Approach: I stored the input as an integer n. Then I initialized an integer count with the value of 0. Then I made a for loop that starts at 2 and increases by 1 until it reaches n inclusively. In the loop, I initialized an integer j with the value of 2. Using the logic from last problem, I made a while loop that checks if j is less than or equal to i/j, since we are checking if each value of i is prime or not instead of n. If i evenly divides by j, then I break out of the while loop. Otherwise, I increase j by one. Outside of the while loop I check if j is greater than i divided by j. If true, I increase count, otherwise I check the next value of i. After the for loop is done, I print the value of count.
 
 [Problem 14 (Perfect Numbers)]
 
-Goal: ...
+Goal: Output all perfect numbers that are less than or equal to the input n
 
-Approach: ...
+Approach: I stored the input n as an integer. Then I made a for loop with the variable i that starts at 2 to n inclusively, increasing by 1. In this loop I initialize a variable total with the value of zero. This variable represents the sum of all the factors of i. After that, I make another for loop with the variable j that starts at 1 and goes until it reaches i/2 inclusively, increasing by 1. If i evenly divides by j, then j is a factor of i, so we add j to the total. Outside of the j loop, I check if the total is equal to i. This means that the sum of all of its factors is equal to itself, so it is a perfect number. If this condition is met, then i is printed.
 
 [Problem 15 (Ramanujan Numbers)]
 
-Goal: ...
+Goal: Output the integers <= n that can be expressed as the sum of two cubes in two different ways
 
-Approach: ...
+Approach: I stored the input n as an integer. I initialized a variable "a" with a value of 1. I made a while loop that runs while the cube of "a" is less than or equal to n. Inside of that loop, I initialized a variable "b" with the value of a+1 and made another while loop that runs while a^3 + b^3 is less than or equal to n. I repeated the same process for variables "c" and "d", starting from a+1 and c+1, each with their own while loops. This lets the program try every combination of four integers without repeating the same pair twice. In the inner loop, I calculated the sums a^3 + b^3 and c^3 + d^3. If both sums are equal, I printed the number along with the cube combinations, since that means we found a Ramanujan number. Otherwise, each variable increments by 1 and the loops keep running until all possible combinations are checked.
 
 2. Did you receive any help? List the sources along with a short description of the help received.
 
@@ -101,4 +101,4 @@ https://www.geeksforgeeks.org/java/java-math-cos-method/    Learned that the sin
 3. List any other comments here. Feel free to provide any feedback on how much you learned from
 doing the assignment, and whether you enjoyed doing it.
 
-...
+I liked how this assignment included this write up for each program. It helped me understand what my code was actually doing since I had to explain it further rather than just writing it.

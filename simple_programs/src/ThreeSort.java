@@ -6,9 +6,11 @@ public class ThreeSort {
         int x = Integer.parseInt(args[0]);
         int y = Integer.parseInt(args[1]);
         int z = Integer.parseInt(args[2]);
-        int smallest = Math.min(Math.min(x, y), z);
-        int largest = Math.max(Math.max(x, y), z);
-        int middle = (x + y + z) - smallest - largest;
-        StdOut.println(smallest + " " + middle + " " + largest);
+
+        // Find the smallest, middle, and greatest of the 3 values
+        int first = Math.min(Math.min(x, y), z);
+        int last = Math.max(Math.max(x, y), z);
+        int middle = (x + y + z) - first - last;
+        StdOut.println(first + " " + middle + " " + last);
     }
 }

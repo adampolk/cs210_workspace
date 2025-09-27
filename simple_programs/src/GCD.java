@@ -5,13 +5,16 @@ public class GCD {
     public static void main(String[] args) {
         int p = Integer.parseInt(args[0]);
         int q = Integer.parseInt(args[1]);
-        int greatest = 1;
-        for(int i = 2; i <= (Math.min(p,q)); i++){
-            if(p % i == 0 && q % i == 0){
-                greatest = i;
-            }
-        }
 
-        StdOut.println(greatest);
+        // While q is not an even divisor
+        while(p % q != 0){
+            // Swap p with q and set q equal to the remainder of the previous value of p and itself
+            int temp = p;
+            p = q;
+            q = temp % q;
+
+            
+        }
+        StdOut.println(q);
     }
 }

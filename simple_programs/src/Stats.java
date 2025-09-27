@@ -6,15 +6,20 @@ public class Stats {
     public static void main(String[] args) {
         int a = Integer.parseInt(args[0]);
         int b = Integer.parseInt(args[1]);
-        // double range = b - a;
-        // double x1 = Math.random() * range + a;
-        // double x2 = Math.random() * range + a;
-        // double x3 = Math.random() * range + a;
-        double x1 = StdRandom.uniform(a, b);
-        double x2 = StdRandom.uniform(a, b);
-        double x3 = StdRandom.uniform(a, b);
-        double m = (x1 + x2 + x3) / 3;
-        double var = (Math.pow(x1 - m, 2) + (Math.pow(x2 - m, 2) + (Math.pow(x3-m, 2))) / 3);
+        
+        // Get 3 random doubles between a (inclusive) and b (exclusive)
+        // Need to cast to double here because if input = 0, 1 then only integer from [0, 1) is 0, meaning output will just be 0.0 0.0 0.0
+        double x1 = StdRandom.uniform((double) a, (double) b);
+        double x2 = StdRandom.uniform((double) a, (double) b);
+        double x3 = StdRandom.uniform((double) a, (double) b);
+
+        // Calculate the mean of the three doubles
+        double m = (x1 + x2 + x3) / 3; 
+
+        // Calculate the variance of the three doubles
+        double var = ((x1-m)*(x1-m) + (x2-m)*(x2-m) + (x3-m)*(x3-m)) / 3;
+
+        // Calculate the standard deviation of the three doubles
         double std = Math.sqrt(var);
         StdOut.println(m + " " + var + " " + std);
     }
