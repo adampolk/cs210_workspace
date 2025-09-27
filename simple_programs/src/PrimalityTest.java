@@ -1,5 +1,4 @@
 import stdlib.StdOut;
-import stdlib.StdRandom;
 
 public class PrimalityTest {
     // Entry point.
