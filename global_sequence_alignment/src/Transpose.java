@@ -26,7 +26,11 @@ public class Transpose {
         // Print values in array c in col major order
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
-                StdOut.print(c[i][j] + " ");
+                if(j < m - 1){
+                    StdOut.printf("%.6f ", c[i][j]);
+                }else{
+                    StdOut.printf("%.6f", c[i][j]);
+                }
             }
             StdOut.println();
         }

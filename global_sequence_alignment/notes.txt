@@ -3,15 +3,15 @@ problem along with any issues you encountered and if/how you managed to solve th
 
 [Problem 1 (Compute Edit Distance)]
 
-Goal: ... 
+Goal: To compute the edit distance between two DNA sequences. This means to figure out the minimum amount of edits needed to turn one sequence into the other. 
 
-Approach: ... 
+Approach: I read the two sequences of DNA as standard input (x, y) and initialized to integers (m, n) representing the length of these two strings. I made a matrix named opt of size m + 1 and n + 1 which will be used to store the edit distance of x[i..m] and y[j...n]. Using for loops, I intialized the rightmost column of opt to 2(m - i) and the bottom most row of opt to 2(n - j), each less than zero and less than or equal to m & n. These are the base cases for the program which represent the cost of aligning the remaining strings of x and y with gaps. After this, I looped through the matrix backwards from the bottom right to the top left. If the characters in each string at y and j are equal (x[i] == y[j), the cost is set to the minimum of taking the diagonal (opt[i+1][j+1]), inserting a gap in y (opt[i+1][j] + 2), or inserting a gap in x (opt[i][j+1] + 2). If they aren't equal, then the same is done, but a cost of 1 is added onto the diagonal (opt[i + 1][j + 1] + 1). Finally, I printed the two sequences, the dimensions of the matrix, and full formatted table. One issue that I ran into was printing the wrong dimensions of the matrix which made my alignment code work in correctly. I fixed it by printing m + 1 and n + 1 instead of m & n. 
 
 [Problem 2 (Recover Alignment)]
 
-Goal: ... 
+Goal: To recover the actual alignment between the two sequences that gives the minimum edit distance. 
 
-Approach: ... 
+Approach: I read the two sequences of x and y using standard input, and set integers m and n equal to their lengths. Then I read opt from standard input given from EditDistance.java. I print the value at opt[0][0] because it represents the optimal alignment cost. I initialize two integers i and j with values of 0. Then I made a while loop that runs until i < m and j < n. If opt[i][j] == opt[i+1][j] + 2, then x[i] is aligned with a gap in y. Else if opt[i][j] == opt[i][j+1] + 2, then y[j] is aligned with a gap in x. Otherwise, both characters are aligned with each other, with a penalty of 0 if they match or 1 if they are different. Each time one of these conditions are met, I printed the alignment step and increased either i or j, or both depending on the case. After this loop, if one string gets exhausted before the other, I aligned the remaining characters of it with gaps. At first I ran into index out of bounds errors because I wasn't careful about the boundaries of opt. This was fixed after I fixed the problem I mentioned in EditDistance. 
 
 2. Did you receive any help? List the sources along with a short description of the help received.
 
