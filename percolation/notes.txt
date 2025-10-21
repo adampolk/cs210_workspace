@@ -1,0 +1,27 @@
+1. For each problem, state its goal in your own words and describe your approach to solve the 
+problem along with any issues you encountered and if/how you managed to solve those issues.
+
+Problem 1 (Percolation Data Type): ...
+
+Goal: To estimate the percolation threshold of a system, which shows that something can flow from an input source through a system into the output sink.
+
+Approach: In my constructor, I made sure that the size of the percolation system input is greater than zero. After that, I intialize my instance variables (creating the n * n grid, each of the union find objects, setting the sink site, etc). Next I moved onto the open function. First I check that i and j are not out of bounds of the array, then if the site given is not already open, I open it and increase the number of open sites. Next I check if the site is in the first row, if true, I connect it to the source for the first and second union find objects. If it is in the last row, then I connect it to the sink, but only for the first union find object. The second union find object should not connect to the sink to solve the backwash problem. Then I check all of the neighboring sites (north, east, south, and west) and connect them to the given site on both union find objects. After that, I implemented the isOpen function which just makes sure that the given site is not out of bounds and then just returns the array value at that site (true: open, false: blocked). For the isFull function, I again check the edge cases and return true if the given site is open AND connected to the source on the second union find object, false otherwise. The second union find object is used here because it ensures that sites that are actually connected to the top are marked as full, since it is not connected to the sink. The numberOfOpenSites function is pretty straight forward, it just returns the value of the openSites variable. Same with percolates, it just returns whether the first union find object has connected the source and sink together, meaning the system percolates. Finally, the encode function returns the encoded value of the given site. This is found using the formula (Current row * number of sites per row (n) + the given column index + 1 (because 0 is for the source)).
+
+Problem 2 (Estimation of Percolation Threshold): ...
+
+Goal: To perform m amount of experiments on an n x n system to calculate the sample mean, standard deviation, and confidence levels of the percolation system. 
+
+Approach: In my constructor, I initalize my instance variables m & x, and then make a for loop that runs from [0, m). In each run of this loop, I create a new Percolation object, passing in n, the size of the percolation system. While this object doesn't pass the percolation checks, I keep generating random site coordinates from [0, n), and open those coordinates. Eventually, the system will percolate, and we break out when it does. Once this condition is met, I set the value at index i of our array x equal to the number of open sites divided by the total number of sites. This represents the fraction of sites opened for each trial until it percolates. After creating that constructor, I implemented the mena and stddev functions, which just use the StdStats library to return the mean and standard deviation of the array x. Then, I created two functions, confidenceLow & confidenceHigh. conFidenceLow returns the formula mean - (1.96 * (standard deviation / square root of m)). This represents the low endpoint of the 95% confidence interval. On the other hand, confidenceHigh returns the same, but with the mean added instead of subtracted.
+
+2. Did you receive any help? List the sources along with a short description of the help received.
+
+Source                                                                      Help Received
+------                                                                      -------------
+
+https://www.cs.umb.edu/~siyer/teaching/dsalib-java.pdf                      Learned what methods the WeightedQuickUnionPathCompressionUF class contains. The write up & discussion did not mention how to actually connect sites.
+https://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html  Learned how to throw an exception for the corner cases mentioned.
+
+3. List any other comments here. Feel free to provide any feedback on how much you learned from
+doing the assignment, and whether you enjoyed doing it.
+
+...
