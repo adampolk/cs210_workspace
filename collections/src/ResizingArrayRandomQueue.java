@@ -11,7 +11,9 @@ public class ResizingArrayRandomQueue<T> implements Iterable<T> {
     // Constructs an empty random queue.
     @SuppressWarnings("unchecked")
     public ResizingArrayRandomQueue() {
-        // TODO
+        // Need to cast an object to type T since generic types are lost after compiling
+       this.q = (T[]) new Object[2];
+       this.n = 0;
     }
 
     // Returns true if this queue is empty, and false otherwise.

@@ -5,14 +5,30 @@ import stdlib.StdStats;
 public class MinMax {
     // Returns the minimum value in the given linked list.
     public static int min(Node first) {
-        // TODO
-        return 0;
+        if(first == null){
+            return Integer.MAX_VALUE;
+        }
+        int min = Math.min(Integer.MAX_VALUE, first.item);
+        Node x = first.next;
+        while(x != null){
+            min = Math.min(min, x.item);
+            x = x.next;
+        }
+        return min;
     }
 
     // Returns the maximum value in the given linked list.
     public static int max(Node first) {
-        // TODO
-        return 0;
+        if(first == null){
+            return Integer.MIN_VALUE;
+        }
+        int max = Math.max(Integer.MIN_VALUE, first.item);
+        Node x = first.next;
+        while(x != null){
+            max = Math.max(max, x.item);
+            x = x.next;
+        }
+        return max;
     }
 
     // A data type to represent a linked list. Each node in the list stores an integer item and a

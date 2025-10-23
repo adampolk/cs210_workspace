@@ -18,7 +18,7 @@ Approach: ...
 Source                               Help Received
 ------                               -------------
 
-...                                  ...
+https://www.geeksforgeeks.org/java/how-to-create-a-generic-array-in-java/     Learned that to create a generic array of type T, you need to create an Object array and cast it to type T. This is because during compilation, generic types are erased, so Java will think the type T is unknown at runtime.
 
 3. List any other comments here. Feel free to provide any feedback on how much you learned from
 doing the assignment, and whether you enjoyed doing it.
